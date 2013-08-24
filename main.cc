@@ -3,7 +3,7 @@
 
 #include "sdl/sdl.h"
 
-static const char* kFontPath = "/usr/share/fonts/TTF/DejaVuSerif-Bold.ttf";
+static const char* kFontPath = "/usr/share/fonts/TTF/VeraBd.ttf";
 
 int main(int argc, char** argv) {
   try {
