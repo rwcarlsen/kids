@@ -9,7 +9,7 @@ int main(int argc, char** argv) {
   try {
     sdl::SDLinit init(SDL_INIT_EVERYTHING);
 
-    int font_size = 144;
+    int font_size = 500;
     sdl::Font font(kFontPath, font_size);
 
     // create window and renderer
@@ -37,8 +37,8 @@ int main(int argc, char** argv) {
           const char* k = SDL_GetKeyName(ev.key.keysym.sym);
           auto surf = font.RenderBlended(std::string(k), sdl::Color::purple());
 
-          int sw = surf->width() * 3;
-          int sh = surf->height() * 3;
+          int sw = surf->width();
+          int sh = surf->height();
           SDL_Rect dst = {(w - sw) / 2, (h - sh) / 2, sw, sh};
 
           ren.Clear();
