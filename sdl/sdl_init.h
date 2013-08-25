@@ -4,6 +4,7 @@
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_ttf.h"
+#include "SDL2/SDL_mixer.h"
 
 namespace sdl {
 
@@ -14,12 +15,16 @@ class SDLinit {
       throw FatalErr();
     }
     if (TTF_Init() != 0) {
-      throw FatalErr();
+      throw FatalErr(TTF_GetError());
+    }
+    if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
+      throw FatalErr(Mix_GetError());
     }
   };
 
   ~SDLinit() {
     TTF_Quit();
+    Mix_CloseAudio();
     SDL_Quit();
   };
 

@@ -8,4 +8,5 @@
 #include "sdl/error.h"
 #include "sdl/sdl_init.h"
 #include "sdl/timer.h"
+#include "sdl/sound.h"
 

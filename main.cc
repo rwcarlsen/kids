@@ -24,6 +24,7 @@ int main(int argc, char** argv) {
     SDL_Event ev;
     bool done = false;
     Letters letters(kFontPath, &ren);
+    sdl::Sound sound("button-25.wav");
     while (!done) {
       // process events
       while (SDL_PollEvent(&ev)) {
@@ -43,6 +44,7 @@ int main(int argc, char** argv) {
           } else {
             std::string s(SDL_GetKeyName(ev.key.keysym.sym));
             if (s.size() == 1 && std::isalnum(s.c_str()[0])) {
+              //sound.Play();
               letters.set_text(s);
             }
           }

@@ -3,7 +3,7 @@
 
 compiler = c++
 cpp_flags = -ggdb -std=c++11 -I.
-link_flags = -lSDL2 -lSDL2_ttf
+link_flags = -lSDL2 -lSDL2_ttf -lSDL_mixer
 
 : foreach *.cc |> $(compiler) $(cpp_flags) -c %f -o %o |> %B.o {objs}
 : {objs} |> $(compiler) $(link_flags) %f -o %o |> kids
