@@ -1,5 +1,6 @@
 
 #include <iostream>
+#include <cctype>
 
 #include "sdl/sdl.h"
 
@@ -35,6 +36,10 @@ int main(int argc, char** argv) {
             done = true;
           }
           const char* k = SDL_GetKeyName(ev.key.keysym.sym);
+          if (!std::isalpha(k[0] && !std::isdigit(k[0]))) {
+            continue;
+          }
+
           auto surf = font.RenderBlended(std::string(k), sdl::Color::purple());
 
           int sw = surf->width();
