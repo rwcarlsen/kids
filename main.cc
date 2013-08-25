@@ -36,6 +36,10 @@ int main(int argc, char** argv) {
             letters.ToggleCase();
           } else if (ev.key.keysym.sym == SDLK_RETURN) {
             letters.NextColor();
+          } else if (ev.key.keysym.sym == SDLK_UP) {
+            letters.set_font_scale(letters.font_scale() * 1.1);
+          } else if (ev.key.keysym.sym == SDLK_DOWN) {
+            letters.set_font_scale(letters.font_scale() / 1.1);
           } else {
             std::string s(SDL_GetKeyName(ev.key.keysym.sym));
             if (s.size() == 1 && std::isalnum(s.c_str()[0])) {

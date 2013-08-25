@@ -42,8 +42,12 @@ class Letters {
     }
   };
 
-  void set_font_size(int pt) {
-    font_scale_ = pt / FONT_SIZE;
+  void set_font_scale(double s) {
+    font_scale_ = s;
+  };
+
+  double font_scale() {
+    return font_scale_;
   };
 
   void Render() {
